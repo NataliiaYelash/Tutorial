@@ -1,3 +1,393 @@
+
+/* Тренажер */
+
+:root {
+    --start-color: blue;
+    --end-color: red;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+    /* CSS-переходи  passage-параметри для body*/
+.passage{
+    margin: 0;
+    min-width: 100vh;
+    border: #484545 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9fd;
+    gap: 20px;
+}
+
+.box-rotate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: tomato;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  
+    /*  We set the transition delay to half a second.  */
+    transition: background-color 500ms linear,transform 500ms ease-in-out 500ms;
+  }
+
+  .box-rotate:hover {
+    background-color: teal;
+    transform: rotate(180deg);
+  }
+  
+.box-passage{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: tomato;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    /* Задаємо властивості переходу */
+    transition-property: background-color,transform;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+    transition-delay: 0; 
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #f9f9fd;
+}
+/* При ховері міняємо значення анімаційний властивостей */
+.box-passage:hover{
+background-color: teal;
+transform: rotate(180deg);
+}
+
+.box-lemon{
+    width: 120px;
+    height: 120px;
+    border-radius: 70px 8px 70px 8px;
+    
+    background-color: rgb(0, 128, 15);
+    transition-property: background-color;
+    transition-duration: 1000ms;
+}
+.box-lemon:hover{
+    background-color: yellow;
+}
+
+.flex-container{
+    flex-direction: column;
+    font-family:New;
+    font-size: small;
+   
+}
+.circle{
+  align-items: center; 
+  justify-content: center; 
+  display: flex;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+
+  transition-property: transform;
+}
+
+.flex-container:hover .circle {
+    transform: scale(1.5);
+  }
+
+  .circle:nth-child(1) {
+    background-color: orange;
+  
+    transition-duration: 500ms;
+  }
+
+  .circle:nth-child(2) {
+    background-color: #03a9f4;
+  
+    transition-duration: 1500ms;
+  }
+
+  .circle:nth-child(3) {
+    background-color: palevioletred;
+  
+    transition-duration: 3000ms;
+  }
+
+  /* transition-timing-function:ease,linear,easy-in,ease-out,easy-in-out */
+  
+  .ball {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  
+    transform: translatex(0);
+    transition-property: transform;
+    transition-duration: 2000ms;
+  }
+
+  .ball:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  .container-ball:hover .ball {
+    transform: translatex(calc(15vw - 5px));
+  }
+
+  .ball:nth-child(1) {
+    background-color: #f44336;
+    transition-timing-function: linear;
+  }
+
+  .ball:nth-child(2) {
+    background-color: #3f51b5;
+    transition-timing-function: ease;
+  }
+
+  .ball:nth-child(3) {
+    background-color: #00bcd4;
+    transition-timing-function: ease-in;
+  }
+
+  .ball:nth-child(4) {
+    background-color: #4caf50;
+    transition-timing-function: ease-out;
+  }
+
+  .ball:nth-child(5) {
+    background-color: #ffeb3b;
+    transition-timing-function: ease-in-out;
+  }
+
+  .ball:nth-child(6) {
+    background-color: #e91e63;
+    transition-timing-function: cubic-bezier(0.39, 1.03, 0.82, 0.08);
+  }
+  
+  
+
+  /*інгредієнт */
+  .tile-set {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .tile {
+    height: 200px;
+    flex-basis: calc(50% - 10px);
+    margin: 5px;
+    border-radius: 4px;
+    background-color: #9e9e9e;
+  
+    text-align: center;
+    line-height: 200px;
+    color: black;
+    font-family: monospace;
+    font-size: 24px;
+    letter-spacing: -0.05em;
+    
+      box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+  }
+  
+  .tile:nth-child(1) {
+    background-image: linear-gradient(
+      to bottom,
+      var(--start-color),
+      var(--end-color)
+    );
+  }
+  
+  .tile:nth-child(2) {
+    background-image: linear-gradient(
+      to top,
+      var(--start-color),
+      var(--end-color)
+    );
+  }
+  
+  .tile:nth-child(3) {
+    background-image: linear-gradient(
+      to right,
+      var(--start-color),
+      var(--end-color)
+    );
+  }
+  
+  .tile:nth-child(4) {
+    background-image: linear-gradient(
+      to top left,
+      var(--start-color),
+      var(--end-color)
+    );
+  }
+
+/* Позиціонування */
+
+.section,
+.container{
+    border: 1px solid #9e9e9e;
+    background-color: #484545;
+    color: #f9f9fd;
+}
+ .container{
+    position: relative;
+} 
+.box-position.red{
+    position: relative;
+    /* top: 20px;
+    left: 50px; */
+    width: 150px;
+    height: 150px;
+    background-color: #f44336;
+    
+    
+}
+.box-position.green{
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: #4caf50;
+    opacity: 0.5;
+}
+.box-position.blue{
+    position: fixed;
+    bottom: 50px;
+    right: 120px;
+
+    width: 150px;
+    height: 50px;
+    background-color: #3f51b5;
+    border-radius: 10px;
+    
+}
+.sticky-title{
+    color:rgb(169, 143, 143);
+    position: sticky;
+    top: 0;
+    text-align: center;
+}
+.box-position{
+    position: relative;
+}
+
+
+body {
+    background-color: #f9f9fd;
+    font-family: sans-serif;
+    line-height: 1.5;
+    color: #484545;
+    font-size: 20px;
+    
+  }
+  
+  .parent {
+    background-color: #3f51b5;
+  }
+  
+  .child {
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: #4caf50;
+    text-align: center;
+  }
+  
+  .parent,
+  .child {
+    padding: 20px;
+    border-radius: 4px;
+    
+  }
+  
+    
+
+   .box {
+    box-sizing: border-box;
+    width: 150px;
+    height: 150px;
+    padding: 10px 20px 5px;
+    margin: 100px;
+    background-color: #ffeb3b;
+
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: blue;
+
+    /* Встановить стилі правої рамки */
+    border-right-width: 5px;
+    border-right-style: dotted;
+    border-right-color: black;
+
+    /* Встановить стилі нижньої рамки */
+    border-bottom-width: 7px;
+    border-bottom-style: dashed;
+    border-bottom-color: palevioletred;
+
+    /* Встановить стилі лівої рамки */
+    border-left-width: 9px;
+    border-left-style: dashed;
+    border-left-color: green;
+  }
+ 
+
+
+.link {
+    display: inline-block;
+    padding: 16px 32px;
+  
+    border-radius: 3px;
+    background-color: teal;
+    color: white;
+  
+    font-family: sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+ .link::before{
+    display: inline-block;
+    width: 16px;
+    height: 12px;
+    background-color: red;
+    content:"" ;
+    background-size: contain;
+    margin-right: 10px;
+}  
+
+
+pre {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    color: #2a2a2a;
+    font-size: 16px;
+  }
+  
+  pre::first-letter {
+    font-family: 'Tahoma', serif;
+    font-size: 32px;
+    color: #f44336;
+  }
+  pre::selection {
+    color: #ffffff;
+    background-color: #3f51b5;
+  }
+
+
+
 .schedule-body > tr:hover {
     background-color: tomato;
     color: white;
@@ -43,3 +433,4 @@
     border: 1px solid #212121;
   }
 
+  
