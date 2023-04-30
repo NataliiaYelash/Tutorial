@@ -60,15 +60,15 @@ console.log(typeof isSidebarOpen);
 // confirm()-виводить модальне вікно з повідомленням, і дві кнопки OK-true і Cancel-false
 // Просимо клієнта підтвердити бронювання готелю
 // і зберігаємо результат роботи confirm у змінну
-const isComing = confirm("Please confirm hotel reservation");
-console.log(isComing);
+// const isComing = confirm("Please confirm hotel reservation");
+// console.log(isComing);
 
 // prompt() - виводить модальне вікно з полем введення і кнопками Ok і Cancel. Натискаючи на Ok, результатом буде те, що ввів користувач, у випадку Cancel - повертається null
 // Запитуємо назву готеля, в якому хотів би зупинитися клієнт
 // і зберігаємо результат виклику prompt у змінну
 // Незалежно, що введе користувач, навіть цифри, все одно повернеться рядок
-const hotelName = prompt("Please enter desired hotel name");
-console.log(hotelName);
+// const hotelName = prompt("Please enter desired hotel name");
+// console.log(hotelName);
 
 
 // ШАБЛОННІ РЯДКИ
